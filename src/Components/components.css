@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme{
+    --color-Button-bg: #2755AF;
+}
+
+@layer components{
+   
+    .box{
+        @apply w-md  ring-1 ring-gray-400 rounded-md place-self-center max-w-[80%]
+        shadow-2xl shadow-black
+    }
+    .ip{
+        @apply ring-1 ring-gray-300 rounded-md p-1.5 mb-2.5
+        focus:outline-0 
+        focus:inset-ring-1 inset-ring-blue-500
+    }
+
+  
+    .btn{
+        @apply p-2.5 pl-5 pr-5 rounded-xl bg-Button-bg text-amber-50 translate-y-[-15%]
+        hover:bg-blue-700  
+        hover:scale-105
+        transition-all duration-300
+    }
+    .Intro-text{
+        @apply  flex flex-col items-center justify-center text-center 
+    }
+    .brand{
+        @apply text-2xl text-Button-bg font-bold
+        md:text-4xl
+    }
+    .navbar{
+        @apply flex items-center justify-between p-2
+        md:p-5
+        
+    }
+    .nav-links{
+        @apply flex space-x-2 text-lg font-medium items-center
+        md:space-x-8
+    }
+    .footer{
+        @apply bg-linear-to-r  from-[#141433] to-[#2F2F75] text-white mt-12
+      
+    }
+    .footer-container{
+        @apply flex flex-col items-center justify-center text-center p-6 mt-12
+    }
+
+}
