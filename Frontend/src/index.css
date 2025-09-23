@@ -1,9 +1,6 @@
 @import "tailwindcss";
-*{
-  box-sizing: border-box;
-  font-family:Arial, Helvetica, sans-serif;
-}
-
-body{
-  height: 100vh;
+@layer base{
+  body {
+    @apply bg-blue-200 text-black overflow-x-hidden box-border;
+  }
 }

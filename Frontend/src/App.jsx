@@ -1,36 +1,33 @@
-import Login from './Components/Login';
-import SignUp from './Components/SingUp';
-import Intro from './Components/Intro';
-import Footer from './Components/Footer';
-import logo from "./assets/logo.png"
-import './App.css';
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  useNavigate
-} from "react-router-dom";
-import NavBar from './Components/NavBar';
+// App.js
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Before_logIn from './Pages/BeforelogIn';
+import After_logIn from './Pages/Afterlogin';
+import Dashboard from './Pages/Dashboard';
+import Inventory from './Pages/Inventory';
+import Sales from './Pages/Sales';
+import Report from './Pages/Report';
+import LowStock from './Pages/LowStock';
+import Setting from './Pages/Setting';
+
 function App() {
-
-
   return (
-    <div className=' h-[100vh]'>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Before_logIn />} />
 
-      <BrowserRouter >
-        <NavBar logo={logo} />
-        <div className='flex justify-center items-center h-[85vh]'>
-          <Routes >
-            <Route path='/' element={<Intro />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/signup' element={<SignUp />} />
-          </Routes>
-        </div>
-
-        <Footer />
-      </BrowserRouter>
-    </div>
-  )
+        {/* Parent route with children */}
+        <Route path="/afterlogin" element={<After_logIn />}>
+          <Route index element={<Dashboard />} />   {/* /afterlogin */}
+          <Route path="inventory" element={<Inventory />} />   {/* /afterlogin/inventory */}
+          <Route path="sales" element={<Sales />} />           {/* /afterlogin/sales */}
+          <Route path="report" element={<Report />} />         {/* /afterlogin/report */}
+          <Route path="lowstock" element={<LowStock />} />     {/* /afterlogin/lowstock */}
+          <Route path="setting" element={<Setting />} />       {/* /afterlogin/setting */}
+        </Route>
+        
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
