@@ -4,16 +4,19 @@ import "./components.css"
 
 function SignUp(params) {
 
-    const [visibility, setVisiblity] = useState("password")
+    const [visibility, setVisiblity] = useState("password");
 
     return (
         <div className="box top-15">
+            {/* close button */}
             <div className=" flex justify-end" >
                 <img src={closeIcon} className="opacity-70 cursor-pointer"
                 alt="close" onClick={() => { params.close() }} />
             </div>
+            {/* heading */}
             <h1 className="text-5xl pt-10 text-gray-700 text-center">Sign up</h1>
-            <form action="" method="post" className="flex flex-col p-10 pb-0 pt-5">
+            {/* form */}
+            <form action=""  method="post" className="flex flex-col p-10 pb-0 pt-5">
 
                 <label htmlFor="gst" className="text-gray-700">GST no.</label>
                 <input type="text" name="gst" id="gstNo" required className="ip" />
@@ -36,6 +39,7 @@ function SignUp(params) {
 
                 <input type="submit" value="Sign up" className="btn mt-5 mb-0" />
             </form>
+            {/* login link */}
             <p className="text-center mt-5 mb-10 text-gray-700">
                 Already have an account?
                 <button
